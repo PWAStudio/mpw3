@@ -14,6 +14,17 @@
     </div>
     <div class="container">
         <form>
+            <fieldset class="redsection">
+
+                <div class="row">
+                    <div class="col-75">
+                        <input class="pass" type="text" id="genPass" placeholder="...." readonly value="">
+                    </div>
+                    <div class="col-25">
+                        <input type="button" value=" Copy " class="copyButton" onclick="copyClipboard()">
+                    </div>
+                </div>
+            </fieldset>
             <fieldset class="blacksection">
                 <div class="row">
                     <div class="col-25">
@@ -75,19 +86,7 @@
                 </div>
             </fieldset>
             <br>
-            <fieldset class="redsection">
-
-                <div class="row">
-                    <div class="col-75">
-                        <input class="pass" type="text" id="genPass" placeholder="...." readonly value="">
-                    </div>
-                    <div class="col-25">
-                        <input type="button" value=" Copy " class="copyButton" onclick="copyClipboard()">
-                    </div>
-                </div>
-
-
-            </fieldset>
+            
         </form>
     </div>
 
