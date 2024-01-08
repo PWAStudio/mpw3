@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+	<meta charset=utf-8>
+	<div type="form">
+		<meta http-equiv=Content-Security-Policy
+			content="default-src 'none'; style-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src https://i.creativecommons.org https://licensebuttons.net; child-src 'self'">
+		<!-- by Tom Thorogood <me@tomthorogood.co.uk> -->
+		<!-- This work is licensed under the Creative Commons Attribution
+		 4.0 International License. To view a copy of this license,
+		 visit http://creativecommons.org/licenses/by/4.0/ or see LICENSE. -->
+		<title>Master Password</title>
+		<link rel=stylesheet href=app.css>
+</head>
+
+<body>
+
+	<header class="page-header">
+		<h1>Master Password...|</h1>
+	</header>
+
+	<main class="page-body">
+		<div class=user>
+
+			<p><label>Full name: <input type="text" name="fullname" required placeholder="John Smith"></label></p>
+
+			<p><label>Master Password: <input name=masterpassword required type=password placeholder=Password></label>
+			</p>
+
+			<p><label>MPW Version: <input disabled name=version required type=number min=0 max=3 value=3></label></p>
+
+			<p><input type="button" name=calculatekey value="Generate Key"></p>
+		</div>
+		<hr />
+		<div class=site>
+
+
+			<p><label>Site: <input type="text" disabled name=site required placeholder=example.com></label></p>
+
+			<!--<p><label>Counter: <input disabled name=counter required type=number min=1 max=4294967295 value=1></label></p>-->
+			<p><label>Counter: <input disabled name=counter required type="number" min=1 max=2147483647 value=1></label>
+			</p>
+
+			<p><label>Context: <input disabled type="text" name=context placeholder="Type purpose (Not Mandatory)"></label></p>
+
+			<p><label>
+					Template:
+					<select disabled name=template required>
+						<option value=maximum>Maximum</option>
+						<option value=long selected>Long</option>
+						<option value=medium>Medium</option>
+						<option value=basic>Basic</option>
+						<option value=short>Short</option>
+						<option value=pin>PIN</option>
+						<option value=name>Name</option>
+						<option value=phrase>Phrase</option>
+					</select>
+				</label></p>
+
+			<p><label>
+					Type:
+					<select disabled name=type required>
+						<option value=identification>Identification (Username)</option>
+						<option value=authentication selected>Authentication (Password)</option>
+						<option value=recovery>Recovery (Security Answer)</option>
+					</select>
+				</label></p>
+		</div>
+
+		<div class=result>
+
+			<p><label>Generated Password: <input disabled type="result" class=password readonly placeholder=Password></label></p>
+
+			<p>Error: <code class=error><noscript>You must have JavaScript enabled for this page to
+						work.</noscript></code></p>
+		</div>
+	</main>
+
+	<footer class=page-footer>
+		<h2>License</h2>
+
+		<p class="footer">
+			<a href=https://creativecommons.org/licenses/by/4.0/ rel=license>
+				<img alt="Creative Commons Licence" src=https://i.creativecommons.org/l/by/4.0/88x31.png> </a> <span
+					xmlns:dct=http://purl.org/dc/terms/ property=dct:title>mpw-js</span> by <a
+					xmlns:cc=http://creativecommons.org/ns# href=https://tomthorogood.co.uk/ property=cc:attributionName
+					rel=cc:attributionURL>Tom Thorogood</a> is licensed under a <a rel=license
+					href=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International
+					License</a>. mpw-js is a JavaScript + Web Crypto implementation of the Master Password App algorithm
+					&lt;<a href=http://masterpasswordapp.com/algorithm.html>http://masterpasswordapp.com/algorithm.html
+					</a>&gt;. </p> </footer> </div> <script>
+					// Test for required ES6 features
+					// This test must be in a seperate script tag as they are
+					// language features and ES5 parsers will hard-fail otherwise
+
+					// If the ES6 class, let, destructive assignment and rest arguments
+					// are supported, this will be successful and ES6 files will be loaded
+					// rather than the transpiled files
+					class $ES6 { constructor() { let b = true; this.b = b; } }
+					const [canES6] = ((...args) => args)(new $ES6().b);
+					</script>
+					<script>
+						// If the needed ES6 features aren't supported the ES6 to ES5
+						// transpiled files will be loaded instead
+						var esdir = (typeof canES6 !== "undefined" && canES6) ? "" : "es5/";
+
+						// If setImmediate is not implemented we include the polyfill
+						window.setImmediate || document.write("<script src=" + esdir + "setImmediate-polyfill.js><\/script>");
+
+						// If Typed Arrays are not supported we include the polyfill
+						// https://github.com/inexorabletash/polyfill
+						window.ArrayBuffer || document.write("<script src=typedarray-polyfill.js><\/script>");
+
+						// If TextEncoder is not supported we include the polyfill
+						// https://github.com/inexorabletash/text-encoding
+						window.TextEncoder || document.write("<script src=encoding-polyfill.js><\/script>");
+
+						// If Promise is not supported we include the polyfill
+						// https://github.com/taylorhakes/promise-polyfill
+						window.Promise || document.write("<script src=promise-polyfill.js><\/script>");
+
+						// Alias window.crypto.subtle with window.crypto.webkitSubtle if
+						// the latter but not the former is supported
+						if (!window.crypto.subtle && window.crypto.webkitSubtle) {
+							window.crypto.subtle = window.crypto.webkitSubtle;
+						}
+
+						// If Web Crypto API is not supported we include a JS crypto library
+						// https://code.google.com/p/crypto-js/
+						if (!window.crypto.subtle) {
+							document.write(
+								"<script src=https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-sha256.js><\/script>"
+							);
+							document.write(
+								"<script src=https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/pbkdf2.js><\/script>");
+							document.write(
+								"<script src=https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/lib-typedarrays-min.js><\/script>"
+							);
+						}
+
+						// If MAX_SAFE_INTEGER (ES6) is not defined, define it
+						if (!Number.MAX_SAFE_INTEGER) {
+							Number.MAX_SAFE_INTEGER = Math.pow(2, 53) - 1;
+						}
+
+						// If your borwser needs a lot of polyfills consider upgrading
+						// to a more modern feature rich browser, if you are a browser
+						// developer considering adding these much needed features already!
+						// :D
+
+						// Include the scrypt implementation
+						document.write("<script src=" + esdir + "lib/pbkdf2.js><\/script>");
+						document.write("<script src=" + esdir + "lib/scrypt.js><\/script>");
+
+						// Include the MPW class
+						document.write("<script src=" + esdir + "lib/mpw.js><\/script>");
+					</script>
+					<script src=app.js></script>
+</body>
+
+</html>

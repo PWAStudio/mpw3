@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: auto;
+    max-width: 800px;
+    font-family: Arial;
+    font-size: 18px;
+    background-color:#000000;
+    color: #c9c9c9;
+}
+
+.apptitle{
+  font-size: 30px;
+  font-weight: bolder;
+  padding: 10px 0px 0px 0px;
+  background-color: #000;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  color:#0f0;
+  text-shadow: 0 0 11px #06ff06;
+
+}
+
+input[type=text],input[type=password], input[type=number],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid #252525;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 18px;
+    background-color: #080808;
+    color: #FFF;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.loginButton {
+    background-color: #0452aa;
+    color: white;
+    padding: 20px 20px;
+    border: 0px solid #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    /*float:right;*/
+    font-size: 20px;
+    width: 50%;
+}
+
+.copyButton {
+    background-color: #7a0707;
+    color: white;
+    padding: 10px 10px ;
+    border: 0px solid #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    float:right;
+    font-size: 20px;
+    width: 90%;
+}
+
+input[type=button]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #020202;
+    padding: 20px;
+    max-width: 800px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+.col-100 {
+    float: left;
+    width: 75%;
+    margin-top: 26px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row {
+    border: 5px solid transparent;  
+}
+
+.row-center{
+    border: 15px solid transparent;
+    text-align: center;
+}
+
+.red {
+    color: #ff0000 !important;
+    background-color: #210000 !important;
+    border-color: #510000 !important;
+}
+
+.pass{
+    text-shadow: 0 0 10px #ffffff;
+    font-size: 25px !important;
+    background-color: #210000 !important;
+    border-color: #210000 !important;
+}
+
+.green {
+    color: #00ff00 !important;
+    background-color: #002100 !important;
+    border-color: #005100 !important;
+}
+
+/*field set sections */
+.blacksection{
+  margin: 0px;background: #0c0c0c;border-color: #000000;
+}
+
+.redsection{
+  margin: 0px;background: #210000;border-color: #8d0000;
+}
+
+.greensection{
+  margin: 0px;background: #002100;border-color: #008b00;
+}
+
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+
+    .col-25,
+    .col-75,
+    input[type=button] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
