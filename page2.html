@@ -9,29 +9,28 @@
 </head>
 
 <body onload="page2Load()">
-    <div>
-        <center class="apptitle">Master Password...|</center>
-    </div>
+    <div class="apptitle">Master Password...|</div>
     <div class="container">
         <form>
-            <fieldset class="redsection">
+            <fieldset class="form">
+               
+                    <div class="row">
+                        <div class="col-25">
+                            <label class="copyButton1 " onclick="copyClipboard()">Secret🤫:</label>
+                            <input type="button" value="📝COPY" class="copyButton hide" >
+                        </div>
+                        <div class="col-75">
+                            <input class="pass1" type="text" id="genPass" placeholder="...." readonly value="">
+                        </div>
 
-                <div class="row">
-                    <div class="col-75">
-                        <input class="pass" type="text" id="genPass" placeholder="...." readonly value="">
                     </div>
-                    <div class="col-25">
-                        <input type="button" value=" Copy " class="copyButton" onclick="copyClipboard()">
-                    </div>
-                </div>
-            </fieldset>
-            <fieldset class="blacksection">
+   
                 <div class="row">
                     <div class="col-25">
                         <label>Site:</label>
                     </div>
                     <div class="col-75">
-                        <input id="site" type="text"  name="site" required placeholder="website like example.com" >
+                        <input id="site"  type="text"  name="site" required placeholder="website like example.com" >
                     </div>
                 </div>
 
@@ -86,7 +85,7 @@
                 </div>
             </fieldset>
             <br>
-            
+
         </form>
     </div>
 

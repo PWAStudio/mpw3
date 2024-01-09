@@ -7,20 +7,20 @@ body {
     max-width: 800px;
     font-family: Arial;
     font-size: 18px;
-    background-color:#000000;
+    background-color:#080808;
     color: #c9c9c9;
 }
 
 .apptitle{
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bolder;
-  padding: 10px 0px 0px 0px;
-  background-color: #000;
+  padding: 10px 10px;
+  background-color: #002100;
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
   color:#0f0;
   text-shadow: 0 0 11px #06ff06;
-
+  border: 10px solid #000;
 }
 
 input[type=text],input[type=password], input[type=number],
@@ -49,39 +49,70 @@ label {
 }
 
 .loginButton {
-    background-color: #0452aa;
+    background-color: #040953;
     color: white;
     padding: 20px 20px;
     border: 0px solid #000000;
-    border-radius: 4px;
+    border-radius: 24px;
     cursor: pointer;
     /*float:right;*/
     font-size: 20px;
-    width: 50%;
+    width: 75%;
+    text-shadow: 0 0 11px #06ff06;
+    float: right;
 }
 
 .copyButton {
-    background-color: #7a0707;
-    color: white;
-    padding: 10px 10px ;
+    padding: 10px 20px ;
+    border-radius: 8px;
+    text-align: left;
+    float: left;
     border: 0px solid #000000;
-    border-radius: 4px;
     cursor: pointer;
-    float:right;
+    color: #EEE;
     font-size: 20px;
-    width: 90%;
+    width: 80%;
+    background-color: #031d0500;
 }
 
-input[type=button]:hover {
-    background-color: #45a049;
+.copy{
+    background-color: #04700d;
+    padding: 0px 20px;
+    color:rgb(0, 255, 0);
+}
+
+.copyButton:hover {
+    background-color: #052e09;
+    text-shadow: 0 0 11px #06ff06;
+}
+
+.underline{
+    border-top: 0px transparent !important;
+    border-bottom: 1px solid #00ff00 !important;
+    border-left: 1px solid transparent !important;
+    border-right: 1px solid transparent !important;
+    
 }
 
 .container {
-    border-radius: 5px;
-    background-color: #020202;
-    padding: 20px;
+    border-radius: 0px;
+    background-color:#0c0c0c;
+    padding: 10px;
     max-width: 800px;
+    /*width: 1400px;*/
+    top:0%;
+    position:relative;
+    border: 10px solid #000;
 }
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    /*left: 50%;*/
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
 
 .col-25 {
     float: left;
@@ -124,10 +155,21 @@ input[type=button]:hover {
 }
 
 .pass{
-    text-shadow: 0 0 10px #ffffff;
-    font-size: 25px !important;
-    background-color: #210000 !important;
+    text-shadow: 0 0 10px #3cff00;
+    font-size: 30px !important;
     border-color: #210000 !important;
+    max-width: 600px;
+    background-color: transparent !important;
+    color:rgb(210, 255, 210) !important;
+    text-align: center !important;
+}
+
+.pass1{
+    text-shadow: 0 0 11px #3cff00;
+    background-color: #002100;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px !important;
 }
 
 .green {
@@ -136,13 +178,20 @@ input[type=button]:hover {
     border-color: #005100 !important;
 }
 
+.hide{
+    display: none;
+}
+
 /*field set sections */
+.form{
+    margin: 0px;background: transparent;border-color: #0000;
+  }
 .blacksection{
   margin: 0px;background: #0c0c0c;border-color: #000000;
 }
 
 .redsection{
-  margin: 0px;background: #210000;border-color: #8d0000;
+  margin: 0px;background: #002100;border-color: #008b00;
 }
 
 .greensection{
@@ -160,4 +209,7 @@ input[type=button]:hover {
         width: 100%;
         margin-top: 0;
     }
+
+
+    
 }
